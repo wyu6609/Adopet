@@ -32,7 +32,7 @@ const PetCard = ({ pet }) => {
           <Card.Body>
             <Row>
               <Col sm={2}>
-                <Card.Text>Gender:</Card.Text>
+                <Card.Text>Attributes:</Card.Text>
                 <Card.Text>Vaccinated: </Card.Text>
                 <Card.Text>Spayed/Neutered: </Card.Text>
 
@@ -41,7 +41,11 @@ const PetCard = ({ pet }) => {
                 <Card.Text>Description: </Card.Text>
               </Col>
               <Col sm={10}>
-                <Card.Text>{pet.gender}</Card.Text>
+                <Card.Text>{`${pet.gender}, ${
+                  pet.coat ? `${pet.coat} hair` : ""
+                }, ${pet.colors.primary || ""} ${
+                  pet.breeds.primary
+                }`}</Card.Text>
                 <Card.Text>
                   {pet.attributes.shots_current ? "YES" : "NO"}
                 </Card.Text>
