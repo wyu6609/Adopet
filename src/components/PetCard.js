@@ -54,7 +54,7 @@ const PetCard = ({ pet }) => {
                 </Card.Text>
 
                 <Card.Text> {address}</Card.Text>
-                <Card.Text>{pet.distance} mi</Card.Text>
+                <Card.Text>{parseInt(pet.distance)} mi</Card.Text>
                 <Card.Text>
                   {pet.description ? pet.description : "N/A"}
                 </Card.Text>

@@ -1,11 +1,11 @@
 import React from "react";
-import Carousel from "react-bootstrap/Carousel";
+import { Carousel, Image } from "react-bootstrap";
 
 const Home = () => {
   return (
     <Carousel variant="dark" interval={3000} className="text-white">
       <Carousel.Item>
-        <img
+        <Image
           className="d-block w-100"
           src="/images/pet.jpeg"
           alt="First slide"
@@ -15,7 +15,7 @@ const Home = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
+        <Image
           className="d-block w-100"
           src="/images/dog2.jpeg"
           alt="Second slide"
@@ -25,7 +25,7 @@ const Home = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
+        <Image
           className="d-block w-100"
           src="/images/cat1.jpeg"
           height="80%"
