@@ -3,7 +3,7 @@ import "./AboutUs.css";
 
 const AboutUs = () => {
   return (
-    <div className="text-center m-5 scale-in-hor-left">
+    <div className="text-center m-5 ">
       <img
         className="rounded-circle my-5"
         src="/images/logo.jpeg"

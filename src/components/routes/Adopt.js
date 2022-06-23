@@ -1,13 +1,23 @@
 import React, { useEffect, useState } from "react";
+import Spinner from "react-bootstrap/Spinner";
 import axios from "axios";
+import PetCard from "../PetCard";
 
-const Adopt = () => {
-  const [accessToken, setAccessToken] = useState(null);
-  const [pets, setPets] = useState(null);
+const Adopt = ({ pets, isLoading }) => {
+  console.log(pets);
 
-  useEffect(() => {}, []);
-
-  return <div className="d-flex justify-content-center">Adopt</div>;
+  let petCard = pets?.map((pet) => {
+    return <PetCard pet={pet} key={pet.id} />;
+  });
+  return (
+    <div className="d-flex flex-column justify-content-center mt-5">
+      {isLoading ? (
+        <>{petCard}</>
+      ) : (
+        <Spinner animation="border" variant="success" />
+      )}
+    </div>
+  );
 };
 
 export default Adopt;
