@@ -13,7 +13,7 @@ const PetCard = ({ pet }) => {
   return (
     <Card className="m-2">
       <Row>
-        <Col sm={3} md={3}>
+        <Col sm={4} md={3}>
           <Card.Img
             className="m-2"
             style={{
@@ -28,10 +28,10 @@ const PetCard = ({ pet }) => {
             {pet.name}
           </Card.Title>
         </Col>
-        <Col sm={9} md={9}>
+        <Col sm={6} md={9}>
           <Card.Body>
             <Row>
-              <Col sm={2}>
+              <Col xs={6} sm={6} md={3}>
                 <Card.Text>Attributes:</Card.Text>
                 <Card.Text>Vaccinated: </Card.Text>
                 <Card.Text>Spayed/Neutered: </Card.Text>
@@ -40,7 +40,7 @@ const PetCard = ({ pet }) => {
                 <Card.Text>Distance: </Card.Text>
                 <Card.Text>Description: </Card.Text>
               </Col>
-              <Col sm={10}>
+              <Col xs={6} sm={6} md={9}>
                 <Card.Text>{`${pet.gender}, ${
                   pet.coat ? `${pet.coat} hair` : ""
                 }, ${pet.colors.primary || ""} ${
