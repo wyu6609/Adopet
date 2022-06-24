@@ -95,6 +95,7 @@ function NavBar({ handleSubmit, animal, setAnimal, setZipcode }) {
             <Button
               variant="success"
               onClick={() => {
+                navigate("/adopt");
                 handleSubmit(search);
               }}
             >
