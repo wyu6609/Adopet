@@ -17,12 +17,7 @@ function NavBar({ handleSubmit, animal, setAnimal, setZipcode }) {
   return (
     <Navbar bg="light" expand="md">
       <Container fluid>
-        <Navbar.Brand
-          text="white"
-          onClick={() => {
-            navigate("/");
-          }}
-        >
+        <Navbar.Brand text="white" href="/">
           <img
             className="rounded-pill"
             src="/images/navbarLogo.png"
