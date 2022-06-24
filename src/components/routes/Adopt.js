@@ -4,8 +4,6 @@ import axios from "axios";
 import PetCard from "../PetCard";
 
 const Adopt = ({ pets, isLoading }) => {
-  console.log(pets);
-
   let petCard = pets?.map((pet) => {
     return <PetCard pet={pet} key={pet.id} />;
   });

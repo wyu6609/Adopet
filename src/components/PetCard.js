@@ -41,7 +41,7 @@ const PetCard = ({ pet }) => {
                 <Card.Text>Description: </Card.Text>
               </Col>
               <Col xs={6} sm={6} md={9}>
-                <Card.Text>{`${pet.gender}, ${
+                <Card.Text>{`${pet.gender} ${
                   pet.coat ? `${pet.coat} hair` : ""
                 }, ${pet.colors.primary || ""} ${
                   pet.breeds.primary

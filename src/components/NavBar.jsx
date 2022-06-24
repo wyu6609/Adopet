@@ -1,3 +1,4 @@
+import react, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Nav,
@@ -5,11 +6,13 @@ import {
   Button,
   Container,
   Form,
-  FormControl,
+  Dropdown,
+  DropdownButton,
 } from "react-bootstrap";
 
-function NavBar() {
+function NavBar({ handleSubmit, animal, setAnimal, setZipcode }) {
   const navigate = useNavigate();
+  const [search, setSearch] = useState("");
 
   return (
     <Navbar bg="light" expand="md">
@@ -57,15 +60,47 @@ function NavBar() {
               Contact
             </Nav.Link>
           </Nav>
-          <Form className="d-flex">
+          <div className="d-flex">
             <Form.Control
-              type="search"
-              placeholder="Search a pet"
-              className="me-2"
+              placeholder="Enter zip code"
+              className="me-2 "
               aria-label="Search"
+              onChange={(event) => {
+                setSearch(event.target.value);
+              }}
             />
-            <Button variant="success">Search</Button>
-          </Form>
+            <DropdownButton
+              id="dropdown-item-button"
+              title={animal}
+              className="text-capitalize "
+              variant="secondary"
+            >
+              <Dropdown.Item
+                as="button"
+                onClick={() => {
+                  setAnimal("dog");
+                }}
+              >
+                Dog
+              </Dropdown.Item>
+              <Dropdown.Item
+                as="button"
+                onClick={() => {
+                  setAnimal("cat");
+                }}
+              >
+                Cat
+              </Dropdown.Item>
+            </DropdownButton>
+            <Button
+              variant="success"
+              onClick={() => {
+                handleSubmit(search);
+              }}
+            >
+              Search
+            </Button>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

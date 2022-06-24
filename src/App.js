@@ -11,14 +11,21 @@ import axios from "axios";
 const key = "SXp2BsMkrzpp3bz0ncHCc1ekh9UQTipToeryJhbIcifEXcWQUL";
 const secret = "JPm1gyfEIX85MBLoiNaWZAdII0DVbhsIaRP0QUR2";
 let token;
+
 function App() {
   const [isLoading, setLoading] = useState("false");
   const [pets, setPets] = useState(null);
   const [animal, setAnimal] = useState("dog");
   const [zipcode, setZipcode] = useState("11223");
+
+  const handleSubmit = (input) => {
+    setZipcode(input);
+  };
+
+  console.log(animal);
   const fetchAccessToken = () => {
     setLoading(false);
-
+    console.log(zipcode);
     fetch("https://api.petfinder.com/v2/oauth2/token", {
       method: "POST",
       body:
@@ -55,14 +62,22 @@ function App() {
       })
       .catch((err) => console.error(err));
   };
-  console.log(pets);
+
   useEffect(() => {
     fetchAccessToken();
   }, []);
 
+  useEffect(() => {
+    fetchAccessToken();
+  }, [animal, zipcode]);
   return (
     <div>
-      <NavBar />
+      <NavBar
+        handleSubmit={handleSubmit}
+        animal={animal}
+        setAnimal={setAnimal}
+        setZipcode={setZipcode}
+      />
 
       <Routes>
         <Route path="/" element={<Home />} />
